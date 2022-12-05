@@ -1,2 +1,203 @@
+<html>
+  <head>
+    <title>Color rotation on button click in JavaScript</title>
+  </head>
+
+  <body>
+    <canvas id="canvas1" width="300" height="300"></canvas>
+
+    <!-- Empty <body> HTML (the JavaScript code in <script> will generate a button here)-->
+
+    <script>
+      // Create a button element
+      const button1 = document.createElement('button')
+      const button2 = document.createElement('button')
+
+      // Set the button text
+      button1.innerText = 'Anti-Clockwise'
+      button2.innerText = 'Clockwise'
+
+      button1.id = 'AntiClockwiseButton'
+      button2.id = 'ClockwiseButton'
+
+        // color variable
+        var color1 = ["red", "yellow", "green", "orange"];
+
+        // count variable
+        var count = 0;
+        var checkCount = 2;
+        var no=0;
+
+        var i = 0;
+        var j = 3;
+        var no1=3;
+
+      // Attach the "click" event to your button
+      button1.addEventListener('click', () => {
+        i = no;
+        console.log(" i = "+ i);
+
+        if(no <= 2){
+            no = no + 1;
+        }
+        else{
+            no = 0;
+        }
+
+        count = count + 1;
+        var canvas1 = document.getElementById('canvas1');
+        
+        if (canvas1.getContext) {
+            var context1 = canvas1.getContext('2d');
+
+            // left top square
+            if(i<=3){
+                context1.fillStyle = color1[i];     
+                context1.fillRect(10,10,50,50);
+                i++;
+            }
+            else{
+                i = 0;
+                context1.fillStyle = color1[i];     
+                context1.fillRect(10,10,50,50);
+                i++;
+            }
+
+            if(i<=3){
+            // right top square
+                context1.fillStyle = color1[i];               
+                context1.fillRect(70,10,50,50);
+                i++;
+            }
+            else{
+                i=0;
+                context1.fillStyle = color1[i];               
+                context1.fillRect(70,10,50,50);
+                i++;
+
+            }
+
+
+            if(i<=3){
+            // left bottom square
+                context1.fillStyle = color1[i];          
+                context1.fillRect(70,70,50,50);
+                i++;
+            }
+            else{
+                i=0;
+                context1.fillStyle = color1[i];          
+                context1.fillRect(70,70,50,50);
+                i++;
+
+            }
+
+            if(i<=3){
+            // right bottom square
+                context1.fillStyle = color1[i];               
+                context1.fillRect(10,70,50,50);     
+                i++;
+            }
+            else{
+                i=0;
+                context1.fillStyle = color1[i];               
+                context1.fillRect(10,70,50,50);     
+                i++;
+            }
+          
+
+        }
+
+    })
+
+
+    button2.addEventListener('click', () => {
+        // When there is a "click"
+      
+        j = no1;
+        console.log(" j = "+ j);
+
+        if(no1 >= 1){
+            no1 = no1 - 1;
+        }
+        else{
+            no1 = 3;
+        }
+
+        count = count + 1;
+        var canvas1 = document.getElementById('canvas1');
+        
+        if (canvas1.getContext) {
+            var context1 = canvas1.getContext('2d');
+
+            // left top square
+            if(j>=0){
+                context1.fillStyle = color1[j];     
+                context1.fillRect(10,10,50,50);
+                j--;
+            }
+            else{
+                j = 3;
+                context1.fillStyle = color1[j];     
+                context1.fillRect(10,10,50,50);
+                j--;
+            }
+
+            if(j>=0){
+            // right top square
+                context1.fillStyle = color1[j];               
+                context1.fillRect(70,10,50,50);
+                j--;
+            }
+            else{
+                j=3;;
+                context1.fillStyle = color1[j];               
+                context1.fillRect(70,10,50,50);
+                j--;
+
+            }
+
+
+            if(j>=0){
+            // left bottom square
+                context1.fillStyle = color1[j];          
+                context1.fillRect(70,70,50,50);
+                j--;
+            }
+            else{
+                j=3;
+                context1.fillStyle = color1[j];          
+                context1.fillRect(70,70,50,50);
+                j--;
+
+            }
+
+            if(j>=0){
+            // right bottom square
+                context1.fillStyle = color1[j];               
+                context1.fillRect(10,70,50,50);     
+                j--;
+            }
+            else{
+                j=3;
+                context1.fillStyle = color1[j];               
+                context1.fillRect(10,70,50,50);     
+                j--;
+            }
+          
+
+        }
+
+      })
+
+
+      document.body.appendChild(button1)
+      document.body.appendChild(button2)
+
+    </script>
+  </body>
+</html>
+
+
 
 
